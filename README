@@ -26,3 +26,7 @@ that utilizes requests to an external api
 1. Make sure each subdirectory has its own .dockerignore file with node_modules/ added to it, as to not download environment specific modules to containers they are incompatible with 
 2. Dockerfiles use the <RUN npm ci> command instead of the npm install. Clean install command does not utilize the node_modules directory, but does reference the package.json file, installing dependencies in a more efficient manner for CI/CD builds that are designed to work across an array of environments
 3. Finally, in the dockerfile my frontend directory, I had to make an adjust to the <WORKDIR> line, where I changed it from front-end to frontend, which is what the subdirectory is strictly named. After this change, I no longer recevied logs stating that I was attempting to use node specific packages in a linux environment. Make sure the <WORKDIR> line in your dockerfile is named for your subdirectory strictly
+
+# Where I left off
+- Attemtping to bind volumes so that changes in real time are reflected in the docker environment. From what I remember, CHOIKDAR POLLING or something like that allows for
+- the container to continually search for changes 
