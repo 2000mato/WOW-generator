@@ -3,3 +3,18 @@
 that utilizes requests to an external api
 
 ## Getting started
+- Fork or download the repository with the git clone https://github.com/billytomasello/ERN-template-API.git in the directory where you would like to put the project
+- Since this project utilizes docker containers, it is important that your docker desktop application is running before proceeding
+- Once the docker app is up and running and you are in the root directory, type the <docker compose up --build> command in the terminal. The docker containers will be instructed to pull their dependencies from their own respective projects, without you ever needing to install said dependencies on your own device
+- From here, logs in the command line will provide local host links to both the backend server as well as the frontend website
+
+## Technologies used
+-Vite: Development server utilizing react for the website, allowing for HMR to immediately show channges to your code on the website
+-Express: Node.js application allowing for handling of http requests, as well as features such as JSON parsing for incoming responses from the API
+-CORS: Allows for resources to be shared from different domains then the page the request is made from
+
+
+## Issues I had starting this project
+- Node.js module incompatibility with docker: I run a Windows and Node.js setup from my personal device, and had issues integrating the harwdare specific modules into 
+- linux based docker containers. As I learned, several resolutions are required to make sure that your program is able to function in a different environment 
+1. Make sure each subdirectory has its own .dockerignore file with node_modules/ added
