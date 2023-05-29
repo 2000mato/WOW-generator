@@ -13,6 +13,12 @@ that utilizes requests to an external api
 -Express: Node.js application allowing for handling of http requests, as well as features such as JSON parsing for incoming responses from the API
 -CORS: Allows for resources to be shared from different domains then the page the request is made from
 
+## Reccomendations for working within the project
+-In order to see HMR work as efficiently as possible, it is reccomended that you go to the frontend subdirectory and :
+1. <npm install>
+2. <npm run dev>
+- While the purpose of this project is to ensure it runs similarly in a variety of environments thru docker,  
+
 
 ## Issues I had starting this project
 - Node.js module incompatibility with docker: I run a Windows and Node.js setup from my personal device, and had issues integrating the harwdare specific modules into 

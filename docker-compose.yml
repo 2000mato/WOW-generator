@@ -6,15 +6,18 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - ./frontend:/app
+      - ./frontend:/frontend
+      - /backend/node_modules
     depends_on:
       - backend
-    command: npm run dev
+    command: /bin/sh -c "npm ci && npm run dev"
   backend:
     build: ./backend
     image: backend:latest
     ports:
       - 8000:8000
     volumes:
-      - ./backend:/app
-    command: npm run dev
+      - ./backend:/backend
+      - /backend/node_modules
+    command: /bin/sh -c "npm ci && npx nodemon src/server.js"
+
