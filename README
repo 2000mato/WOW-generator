@@ -12,12 +12,8 @@ that utilizes requests to an external api
 -Vite: Development server utilizing react for the website, allowing for HMR to immediately show channges to your code on the website
 -Express: Node.js application allowing for handling of http requests, as well as features such as JSON parsing for incoming responses from the API
 -CORS: Allows for resources to be shared from different domains then the page the request is made from
-
-## Reccomendations for working within the project
--In order to see HMR work as efficiently as possible, it is reccomended that you go to the frontend subdirectory and :
-1. <npm install>
-2. <npm run dev>
-- While the purpose of this project is to ensure it runs similarly in a variety of environments thru docker,  
+-React: A javascript library for building sinlge page applications, with tools such as state managers that allow for live reloading and updating of individual components without having to refresh the entire page
+-Docker: Platform that allows programs to run from linux containers within the user's computer, ensuring compatibility and operability across a variety of hardware configs
 
 
 ## Issues I had starting this project
@@ -26,7 +22,3 @@ that utilizes requests to an external api
 1. Make sure each subdirectory has its own .dockerignore file with node_modules/ added to it, as to not download environment specific modules to containers they are incompatible with 
 2. Dockerfiles use the <RUN npm ci> command instead of the npm install. Clean install command does not utilize the node_modules directory, but does reference the package.json file, installing dependencies in a more efficient manner for CI/CD builds that are designed to work across an array of environments
 3. Finally, in the dockerfile my frontend directory, I had to make an adjust to the <WORKDIR> line, where I changed it from front-end to frontend, which is what the subdirectory is strictly named. After this change, I no longer recevied logs stating that I was attempting to use node specific packages in a linux environment. Make sure the <WORKDIR> line in your dockerfile is named for your subdirectory strictly
-
-# Where I left off
-- Attemtping to bind volumes so that changes in real time are reflected in the docker environment. From what I remember, CHOIKDAR POLLING or something like that allows for
-- the container to continually search for changes 
