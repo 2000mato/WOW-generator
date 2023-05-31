@@ -2,7 +2,7 @@ import '../styles/Body.css'
 import { useState } from 'react'
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
-
+import Button from './Button'
 
 function Body() {
   const [count, setCount] = useState(0)
@@ -14,6 +14,7 @@ function Body() {
           <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
       </div>
+      <Button />
       <h1>Body</h1>
     </>
   )
